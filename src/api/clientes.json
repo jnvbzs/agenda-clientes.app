@@ -1,3 +1,30 @@
 {
-    "clientes": []
+  "clientes": [
+    {
+      "id": "",
+      "nome": "Joao",
+      "email": "joao.email@gmail.com",
+      "dataNascimento": "01-01-2000",
+      "telefones": [
+        {
+          "numero": "67 99999-9999"
+        }
+      ],
+      "documentos": [
+        {
+          "tipo": 1,
+          "numero": "000.000.000-00"
+        }
+      ],
+      "endereco": {
+        "logradouro": "Rua Teste",
+        "numero": "001",
+        "cep": "00000-000",
+        "bairro": "Bairro teste",
+        "cidade": "Cidade teste",
+        "estado": "Estado Teste",
+        "complemento": "Complemento Teste"
+      }
+    }
+  ]
 }
