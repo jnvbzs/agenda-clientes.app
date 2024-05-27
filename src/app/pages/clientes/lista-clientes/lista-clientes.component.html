@@ -1,4 +1,53 @@
-<ng-container *ngIf="clientes; else loading;">
+<ng-container *ngIf="clientes; else loading">
+  <form [formGroup]="form" class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Pesquisar cliente"
+      aria-label="Pesquisar cliente"
+      aria-describedby="button-addon"
+      [formControlName]="'cliente'"
+      (keydown)="onInputKeyDown($event)"
+    />
+    <button
+      *ngIf="form.controls.cliente.value"
+      class="btn btn-danger"
+      type="button"
+      id="button-addon"
+      (click)="limparFiltro()"
+    >
+      <i class="bi bi-x-lg"></i>
+    </button>
+    <button
+      class="btn btn-dark"
+      type="button"
+      id="button-addon"
+      (click)="filtrarCliente(form.controls.cliente.value)"
+    >
+      <i class="bi bi-search"></i>
+    </button>
+  </form>
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let cliente of clientesFiltrados" class="col">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{ cliente.nome }}</h5>
+          <p class="card-text">{{ cliente.email }}</p>
+          <div class="text-end">
+            <div class="btn btn-dark me-2">
+              <i class="bi bi-pencil-square"></i>
+            </div>
+            <div class="btn btn-dark me-2">
+              <i class="bi bi-eye-fill"></i>
+            </div>
+            <div class="btn btn-dark">
+              <i class="bi bi-trash-fill"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ng-container>
 
 <ng-template #loading>
