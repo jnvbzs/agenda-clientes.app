@@ -1,29 +1,263 @@
 {
   "clientes": [
     {
-      "id": "",
-      "nome": "Joao",
-      "email": "joao.email@gmail.com",
-      "dataNascimento": "01-01-2000",
+      "id": "1",
+      "nome": "João Silva",
+      "email": "joao.silva@example.com",
+      "dataNascimento": "1985-02-10",
       "telefones": [
         {
-          "numero": "67 99999-9999"
+          "numero": "11987654321"
         }
       ],
       "documentos": [
         {
           "tipo": 1,
-          "numero": "000.000.000-00"
+          "numero": "123456789"
         }
       ],
       "endereco": {
-        "logradouro": "Rua Teste",
-        "numero": "001",
-        "cep": "00000-000",
-        "bairro": "Bairro teste",
-        "cidade": "Cidade teste",
-        "estado": "Estado Teste",
-        "complemento": "Complemento Teste"
+        "logradouro": "Rua das Flores",
+        "numero": "123",
+        "cep": "12345000",
+        "bairro": "Jardim das Palmeiras",
+        "cidade": "São Paulo",
+        "estado": "SP",
+        "complemento": "Apto 101"
+      }
+    },
+    {
+      "id": "2",
+      "nome": "Maria Oliveira",
+      "email": "maria.oliveira@example.com",
+      "dataNascimento": "1990-05-15",
+      "telefones": [
+        {
+          "numero": "21987654321"
+        }
+      ],
+      "documentos": [
+        {
+          "tipo": 2,
+          "numero": "987654321"
+        }
+      ],
+      "endereco": {
+        "logradouro": "Avenida Central",
+        "numero": "456",
+        "cep": "22030000",
+        "bairro": "Centro",
+        "cidade": "Rio de Janeiro",
+        "estado": "RJ",
+        "complemento": "Bloco B"
+      }
+    },
+    {
+      "id": "3",
+      "nome": "Carlos Pereira",
+      "email": "carlos.pereira@example.com",
+      "dataNascimento": "1982-11-23",
+      "telefones": [
+        {
+          "numero": "31987654321"
+        }
+      ],
+      "documentos": [
+        {
+          "tipo": 1,
+          "numero": "135792468"
+        }
+      ],
+      "endereco": {
+        "logradouro": "Rua da Independência",
+        "numero": "789",
+        "cep": "30140000",
+        "bairro": "Liberdade",
+        "cidade": "Belo Horizonte",
+        "estado": "MG",
+        "complemento": "Casa"
+      }
+    },
+    {
+      "id": "4",
+      "nome": "Ana Costa",
+      "email": "ana.costa@example.com",
+      "dataNascimento": "1975-07-30",
+      "telefones": [
+        {
+          "numero": "41987654321"
+        }
+      ],
+      "documentos": [
+        {
+          "tipo": 2,
+          "numero": "246801357"
+        }
+      ],
+      "endereco": {
+        "logradouro": "Rua do Comércio",
+        "numero": "101",
+        "cep": "80020000",
+        "bairro": "Mercês",
+        "cidade": "Curitiba",
+        "estado": "PR",
+        "complemento": "Apto 202"
+      }
+    },
+    {
+      "id": "5",
+      "nome": "Pedro Almeida",
+      "email": "pedro.almeida@example.com",
+      "dataNascimento": "1995-03-12",
+      "telefones": [
+        {
+          "numero": "51987654321"
+        }
+      ],
+      "documentos": [
+        {
+          "tipo": 1,
+          "numero": "192837465"
+        }
+      ],
+      "endereco": {
+        "logradouro": "Avenida Paulista",
+        "numero": "1500",
+        "cep": "01311000",
+        "bairro": "Bela Vista",
+        "cidade": "São Paulo",
+        "estado": "SP",
+        "complemento": "Andar 5"
+      }
+    },
+    {
+      "id": "6",
+      "nome": "Juliana Martins",
+      "email": "juliana.martins@example.com",
+      "dataNascimento": "1988-06-21",
+      "telefones": [
+        {
+          "numero": "61987654321"
+        }
+      ],
+      "documentos": [
+        {
+          "tipo": 2,
+          "numero": "102938475"
+        }
+      ],
+      "endereco": {
+        "logradouro": "Rua das Acácias",
+        "numero": "350",
+        "cep": "70040900",
+        "bairro": "Asa Norte",
+        "cidade": "Brasília",
+        "estado": "DF",
+        "complemento": "Apto 401"
+      }
+    },
+    {
+      "id": "7",
+      "nome": "Roberto Lima",
+      "email": "roberto.lima@example.com",
+      "dataNascimento": "1979-09-05",
+      "telefones": [
+        {
+          "numero": "71987654321"
+        }
+      ],
+      "documentos": [
+        {
+          "tipo": 1,
+          "numero": "564738291"
+        }
+      ],
+      "endereco": {
+        "logradouro": "Praça da Sé",
+        "numero": "45",
+        "cep": "40020010",
+        "bairro": "Pelourinho",
+        "cidade": "Salvador",
+        "estado": "BA",
+        "complemento": "Bloco C"
+      }
+    },
+    {
+      "id": "8",
+      "nome": "Patrícia Souza",
+      "email": "patricia.souza@example.com",
+      "dataNascimento": "1992-04-14",
+      "telefones": [
+        {
+          "numero": "81987654321"
+        }
+      ],
+      "documentos": [
+        {
+          "tipo": 2,
+          "numero": "475869302"
+        }
+      ],
+      "endereco": {
+        "logradouro": "Avenida Boa Viagem",
+        "numero": "2300",
+        "cep": "51020010",
+        "bairro": "Boa Viagem",
+        "cidade": "Recife",
+        "estado": "PE",
+        "complemento": "Apto 702"
+      }
+    },
+    {
+      "id": "9",
+      "nome": "Fernanda Rocha",
+      "email": "fernanda.rocha@example.com",
+      "dataNascimento": "1983-08-19",
+      "telefones": [
+        {
+          "numero": "91987654321"
+        }
+      ],
+      "documentos": [
+        {
+          "tipo": 1,
+          "numero": "394857261"
+        }
+      ],
+      "endereco": {
+        "logradouro": "Rua da Praia",
+        "numero": "500",
+        "cep": "66023000",
+        "bairro": "Cidade Velha",
+        "cidade": "Belém",
+        "estado": "PA",
+        "complemento": "Apto 1001"
+      }
+    },
+    {
+      "id": "10",
+      "nome": "Marcos Santos",
+      "email": "marcos.santos@example.com",
+      "dataNascimento": "1980-12-25",
+      "telefones": [
+        {
+          "numero": "31912345678"
+        }
+      ],
+      "documentos": [
+        {
+          "tipo": 2,
+          "numero": "182736459"
+        }
+      ],
+      "endereco": {
+        "logradouro": "Rua Nova",
+        "numero": "1200",
+        "cep": "40130000",
+        "bairro": "Garcia",
+        "cidade": "Salvador",
+        "estado": "BA",
+        "complemento": "Casa"
       }
     }
   ]
