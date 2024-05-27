@@ -45,7 +45,7 @@
             >
               <i class="bi bi-eye-fill"></i>
             </div>
-            <div class="btn btn-dark">
+            <div class="btn btn-dark" (click)="removerCliente(cliente)">
               <i class="bi bi-trash-fill"></i>
             </div>
           </div>
@@ -58,7 +58,7 @@
     class="mt-4"
     [type]="'dark'"
     [dismissible]="false"
-    >Nenhum cliente encontrado com o nome pesquisado.</ngb-alert
+    >Nenhum cliente encontrado.</ngb-alert
   >
 </ng-container>
 

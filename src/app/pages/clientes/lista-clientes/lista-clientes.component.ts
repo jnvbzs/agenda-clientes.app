@@ -91,6 +91,18 @@ export class ListaClientesComponent implements OnInit, OnDestroy {
     this.clienteModal = cliente;
   }
 
+  removerCliente(cliente: Cliente) {
+    const index = this.clientes?.indexOf(cliente);
+
+    if (index != null) {
+      this.clientes?.splice(index, 1);
+      this.clientesService.removerCliente(cliente.id);
+      this.clientesFiltrados
+        ? this.filtrarCliente(this.form.controls.cliente.value)
+        : null;
+    }
+  }
+
   private configurarProgressBar() {
     this.progressBarConfig.max = 1000;
     this.progressBarConfig.striped = true;

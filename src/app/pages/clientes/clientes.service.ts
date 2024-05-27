@@ -11,13 +11,13 @@ import {
 
 @Injectable()
 export class ClientesService {
-  private readonly _baseUrl = 'http://localhost:3000';
+  private readonly _baseUrl = 'http://localhost:5259';
 
   constructor(private http: HttpClient) {}
 
   public obterClientes() {
     return lastValueFrom(
-      this.http.get<ClientesDto>(`${this._baseUrl}/clientes`).pipe(
+      this.http.get<ClientesDto>(`${this._baseUrl}/api/cliente`).pipe(
         map((clientes) => {
           return clientes.map<Cliente>((cliente) => {
             return {
@@ -38,6 +38,12 @@ export class ClientesService {
           });
         })
       )
+    );
+  }
+
+  public removerCliente(id: string) {
+    return lastValueFrom(
+      this.http.delete(`${this._baseUrl}/api/cliente/${id}`)
     );
   }
 }
