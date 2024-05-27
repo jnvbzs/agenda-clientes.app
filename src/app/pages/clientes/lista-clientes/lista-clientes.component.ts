@@ -1,10 +1,11 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import {
+  NgbAlertModule,
   NgbProgressbarConfig,
   NgbProgressbarModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { ClientesService } from '../clientes.service';
-import { Clientes } from '../cliente';
+import { Cliente, Clientes } from '../cliente';
 import { CommonModule } from '@angular/common';
 import {
   FormBuilder,
@@ -21,6 +22,7 @@ import { Subscription } from 'rxjs';
   imports: [
     CommonModule,
     NgbProgressbarModule,
+    NgbAlertModule,
     FormsModule,
     ReactiveFormsModule,
   ],
@@ -32,6 +34,8 @@ export class ListaClientesComponent implements OnInit, OnDestroy {
   public clientes?: Clientes;
 
   public clientesFiltrados?: Clientes;
+
+  public clienteModal?: Cliente;
 
   public form: FormGroup<FormularioListaClientes>;
 
@@ -81,6 +85,10 @@ export class ListaClientesComponent implements OnInit, OnDestroy {
   limparFiltro() {
     this.clientesFiltrados = this.clientes;
     this.form.controls.cliente.reset();
+  }
+
+  definirClienteDoModal(cliente: Cliente) {
+    this.clienteModal = cliente;
   }
 
   private configurarProgressBar() {
