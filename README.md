@@ -1,27 +1,59 @@
-# AgendaClientesApp
+# Agenda Clientes Angular 17
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.7.
+## Requisitos
 
-## Development server
+Certifique-se de ter as seguintes dependências instaladas em sua máquina:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Node.js](https://nodejs.org/)
 
-## Code scaffolding
+## Executando
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Clone este repositório:
 
-## Build
+    ```bash
+    git clone https://github.com/jnvbzs/agenda-clientes.app.git
+    ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Navegue até o diretório do projeto:
 
-## Running unit tests
+    ```bash
+    cd agenda-clientes.app
+    ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Com docker
 
-## Running end-to-end tests
+- Construa a imagem Docker:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    ```bash
+    docker build -t agenda.app .
+    ```
+    
+- Execute o contêiner Docker:
 
-## Further help
+    ```bash
+    docker run -p 4201:4200 agenda.app
+    ```
+    
+Agora, você pode acessar a aplicacao em `http://localhost:4201`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Localmente
+
+- Instale as dependências da aplicação
+
+    ```bash
+    npm install
+    ```
+
+- Inicie a aplicação com o npm
+
+    ```bash
+    npm start
+    ```
+    
+- Inicie o json-server
+
+    ```bash
+    npm run start:json-server
+    ```
+    
+Agora, você pode acessar a aplicacao em `http://localhost:4200` e o json-server em `http://localhost:3000`.
