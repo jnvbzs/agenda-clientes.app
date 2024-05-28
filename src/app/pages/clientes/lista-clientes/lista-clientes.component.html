@@ -1,5 +1,6 @@
+<h1 class="my-4">Meus clientes</h1>
 <ng-container *ngIf="clientes; else loading">
-  <form [formGroup]="form" class="input-group mb-3">
+  <form [formGroup]="form" class="input-group mt-4 mb-3">
     <input
       type="text"
       class="form-control"
@@ -27,14 +28,20 @@
       <i class="bi bi-search"></i>
     </button>
   </form>
+  <div class="text-end mb-3">
+    <div class="btn btn-dark fw-bold">
+      <i class="bi bi-plus-lg"></i>
+      Criar cliente
+    </div>
+  </div>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <div *ngFor="let cliente of clientesFiltrados" class="col">
       <div class="card">
         <div class="card-body">
-          <h5 class="card-title">{{ cliente.nome }}</h5>
+          <h5 class="card-title fw-bold">{{ cliente.nome }}</h5>
           <p class="card-text">{{ cliente.email }}</p>
           <div class="text-end">
-            <div class="btn btn-dark me-2">
+            <div class="btn btn-dark me-2" (click)="editarCliente(cliente)">
               <i class="bi bi-pencil-square"></i>
             </div>
             <div
@@ -79,12 +86,12 @@
         <p><span class="fw-bold">Email:</span> {{ clienteModal?.email }}</p>
         <p>
           <span class="fw-bold">Data de nascimento:</span>
-          {{ clienteModal?.dataNascimento }}
+          {{ clienteModal?.dataNascimento | moment : "DD/MM/YYYY" }}
         </p>
         <hr />
         <h5>Telefones</h5>
         <p *ngFor="let telefone of clienteModal?.telefones">
-          <span class="fw-bold">-</span> {{ telefone.numero }}
+          <span class="fw-bold">-</span> {{ telefone.numero | celular }}
         </p>
         <hr />
         <h5>Documentos</h5>
@@ -103,10 +110,10 @@
           {{ clienteModal?.endereco?.numero }}
         </p>
         <p>
-          <span class="fw-bold">CEP:</span> {{ clienteModal?.endereco?.cep }}
+          <span class="fw-bold">CEP:</span> {{ clienteModal?.endereco?.cep | cep }}
         </p>
         <p>
-          <span class="fw-bold">Bairro:</span>:
+          <span class="fw-bold">Bairro:</span>
           {{ clienteModal?.endereco?.bairro }}
         </p>
         <p>
@@ -123,7 +130,11 @@
         </p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+        <button
+          type="button"
+          class="btn btn-dark fw-bold"
+          data-bs-dismiss="modal"
+        >
           Fechar
         </button>
       </div>

@@ -1,5 +1,5 @@
 export interface ClienteDto {
-  id: string;
+  id?: string;
   nome: string;
   email: string;
   dataNascimento: string;
@@ -34,7 +34,7 @@ interface EnderecoClienteDto {
 }
 
 export interface Cliente {
-  id: string;
+  id?: string;
   nome: string;
   email: string;
   dataNascimento: string;
@@ -43,20 +43,20 @@ export interface Cliente {
   endereco: EnderecoCliente;
 }
 
-export type Clientes = Cliente[]; 
+export type Clientes = Cliente[];
 
 export interface TelefoneCliente {
   numero: string;
 }
 
-type TelefonesCliente = TelefoneCliente[];
+export type TelefonesCliente = TelefoneCliente[];
 
 export interface DocumentoCliente {
   tipo: number;
   numero: string;
 }
 
-type DocumentosCliente = DocumentoCliente[];
+export type DocumentosCliente = DocumentoCliente[];
 
 interface EnderecoCliente {
   logradouro: string;

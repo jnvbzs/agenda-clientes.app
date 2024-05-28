@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { lastValueFrom, map } from 'rxjs';
 import {
   Cliente,
-  Clientes,
+  ClienteDto,
   ClientesDto,
   DocumentoCliente,
   TelefoneCliente,
@@ -11,13 +11,13 @@ import {
 
 @Injectable()
 export class ClientesService {
-  private readonly _baseUrl = 'http://localhost:5259';
+  private readonly _baseUrl = 'http://localhost:5259/api';
 
   constructor(private http: HttpClient) {}
 
   public obterClientes() {
     return lastValueFrom(
-      this.http.get<ClientesDto>(`${this._baseUrl}/api/cliente`).pipe(
+      this.http.get<ClientesDto>(`${this._baseUrl}/cliente`).pipe(
         map((clientes) => {
           return clientes.map<Cliente>((cliente) => {
             return {
@@ -41,9 +41,50 @@ export class ClientesService {
     );
   }
 
-  public removerCliente(id: string) {
+  public obterCliente(id: string) {
     return lastValueFrom(
-      this.http.delete(`${this._baseUrl}/api/cliente/${id}`)
+      this.http
+        .get<ClienteDto>(`${this._baseUrl}/cliente/${id}`)
+        .pipe<Cliente>(
+          map((cliente) => {
+            return {
+              id: cliente.id,
+              nome: cliente.nome,
+              email: cliente.email,
+              dataNascimento: cliente.dataNascimento,
+              documentos: cliente.documentos.map((documento) => {
+                return {
+                  tipo: documento.tipo,
+                  numero: documento.numero,
+                };
+              }),
+              endereco: cliente.endereco,
+              telefones: cliente.telefones,
+            };
+          })
+        )
+    );
+  }
+
+  public removerCliente(id: string) {
+    return lastValueFrom(this.http.delete(`${this._baseUrl}/cliente/${id}`));
+  }
+
+  public atualizarCliente(cliente: Cliente) {
+    const { nome, dataNascimento, documentos, email, endereco, telefones } =
+      cliente;
+
+    const body = {
+      nome,
+      dataNascimento,
+      documentos,
+      email,
+      endereco,
+      telefones,
+    };
+
+    return lastValueFrom(
+      this.http.put(`${this._baseUrl}/cliente/${cliente.id}`, body)
     );
   }
 }

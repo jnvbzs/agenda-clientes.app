@@ -1,36 +1,36 @@
 {
   "clientes": [
     {
-      "id": "1",
       "nome": "João Silva",
-      "email": "joao.silva@example.com",
-      "dataNascimento": "1985-02-10",
-      "telefones": [
-        {
-          "numero": "11987654321"
-        }
-      ],
+      "dataNascimento": "1986-02-09T03:00:00.000Z",
       "documentos": [
         {
           "tipo": 1,
           "numero": "123456789"
         }
       ],
+      "email": "joao.silva@example.com",
       "endereco": {
         "logradouro": "Rua das Flores",
-        "numero": "123",
         "cep": "12345000",
-        "bairro": "Jardim das Palmeiras",
         "cidade": "São Paulo",
+        "numero": "123",
         "estado": "SP",
-        "complemento": "Apto 101"
-      }
+        "complemento": "Apto 101",
+        "bairro": "Jardim das Palmeiras"
+      },
+      "telefones": [
+        {
+          "numero": "11987654321"
+        }
+      ],
+      "id": "1"
     },
     {
       "id": "2",
       "nome": "Maria Oliveira",
       "email": "maria.oliveira@example.com",
-      "dataNascimento": "1990-05-15",
+      "dataNascimento": "1990-05-15T00:00:00.000Z",
       "telefones": [
         {
           "numero": "21987654321"
@@ -56,7 +56,7 @@
       "id": "3",
       "nome": "Carlos Pereira",
       "email": "carlos.pereira@example.com",
-      "dataNascimento": "1982-11-23",
+      "dataNascimento": "1982-11-23T00:00:00.000Z",
       "telefones": [
         {
           "numero": "31987654321"
@@ -82,7 +82,7 @@
       "id": "4",
       "nome": "Ana Costa",
       "email": "ana.costa@example.com",
-      "dataNascimento": "1975-07-30",
+      "dataNascimento": "1975-07-30T00:00:00.000Z",
       "telefones": [
         {
           "numero": "41987654321"
@@ -108,7 +108,7 @@
       "id": "5",
       "nome": "Pedro Almeida",
       "email": "pedro.almeida@example.com",
-      "dataNascimento": "1995-03-12",
+      "dataNascimento": "1995-03-12T00:00:00.000Z",
       "telefones": [
         {
           "numero": "51987654321"
@@ -134,7 +134,7 @@
       "id": "6",
       "nome": "Juliana Martins",
       "email": "juliana.martins@example.com",
-      "dataNascimento": "1988-06-21",
+      "dataNascimento": "1988-06-21T00:00:00.000Z",
       "telefones": [
         {
           "numero": "61987654321"
@@ -160,7 +160,7 @@
       "id": "7",
       "nome": "Roberto Lima",
       "email": "roberto.lima@example.com",
-      "dataNascimento": "1979-09-05",
+      "dataNascimento": "1979-09-05T00:00:00.000Z",
       "telefones": [
         {
           "numero": "71987654321"
@@ -186,7 +186,7 @@
       "id": "8",
       "nome": "Patrícia Souza",
       "email": "patricia.souza@example.com",
-      "dataNascimento": "1992-04-14",
+      "dataNascimento": "1992-04-14T00:00:00.000Z",
       "telefones": [
         {
           "numero": "81987654321"
@@ -212,7 +212,7 @@
       "id": "9",
       "nome": "Fernanda Rocha",
       "email": "fernanda.rocha@example.com",
-      "dataNascimento": "1983-08-19",
+      "dataNascimento": "1983-08-19T00:00:00.000Z",
       "telefones": [
         {
           "numero": "91987654321"
@@ -238,7 +238,7 @@
       "id": "10",
       "nome": "Marcos Santos",
       "email": "marcos.santos@example.com",
-      "dataNascimento": "1980-12-25",
+      "dataNascimento": "1980-12-25T00:00:00.000Z",
       "telefones": [
         {
           "numero": "31912345678"
