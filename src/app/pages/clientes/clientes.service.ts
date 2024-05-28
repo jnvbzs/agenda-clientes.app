@@ -44,26 +44,24 @@ export class ClientesService {
 
   public obterCliente(id: string) {
     return lastValueFrom(
-      this.http
-        .get<ClienteDto>(`${this._baseUrl}/cliente/${id}`)
-        .pipe<Cliente>(
-          map((cliente) => {
-            return {
-              id: cliente.id,
-              nome: cliente.nome,
-              email: cliente.email,
-              dataNascimento: cliente.dataNascimento,
-              documentos: cliente.documentos.map((documento) => {
-                return {
-                  tipo: documento.tipo,
-                  numero: documento.numero,
-                };
-              }),
-              endereco: cliente.endereco,
-              telefones: cliente.telefones,
-            };
-          })
-        )
+      this.http.get<ClienteDto>(`${this._baseUrl}/cliente/${id}`).pipe<Cliente>(
+        map((cliente) => {
+          return {
+            id: cliente.id,
+            nome: cliente.nome,
+            email: cliente.email,
+            dataNascimento: cliente.dataNascimento,
+            documentos: cliente.documentos.map((documento) => {
+              return {
+                tipo: documento.tipo,
+                numero: documento.numero,
+              };
+            }),
+            endereco: cliente.endereco,
+            telefones: cliente.telefones,
+          };
+        })
+      )
     );
   }
 
@@ -72,6 +70,20 @@ export class ClientesService {
   }
 
   public atualizarCliente(cliente: Cliente) {
+    const body = this.getBodyCliente(cliente);
+
+    return lastValueFrom(
+      this.http.put(`${this._baseUrl}/cliente/${cliente.id}`, body)
+    );
+  }
+
+  public criarCliente(cliente: Cliente) {
+    const body = this.getBodyCliente(cliente);
+
+    return lastValueFrom(this.http.post(`${this._baseUrl}/cliente`, body));
+  }
+
+  public getBodyCliente(cliente: Cliente) {
     const { nome, dataNascimento, documentos, email, endereco, telefones } =
       cliente;
 
@@ -84,8 +96,6 @@ export class ClientesService {
       telefones,
     };
 
-    return lastValueFrom(
-      this.http.put(`${this._baseUrl}/cliente/${cliente.id}`, body)
-    );
+    return body;
   }
 }

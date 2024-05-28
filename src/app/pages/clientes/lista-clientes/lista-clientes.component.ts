@@ -32,7 +32,7 @@ import { CepPipe } from '../../../shared/pipes/cep/cep.pipe';
     RouterModule,
     MomentPipe,
     CelularPipe,
-    CepPipe
+    CepPipe,
   ],
   providers: [NgbProgressbarConfig],
   templateUrl: './lista-clientes.component.html',
@@ -118,6 +118,10 @@ export class ListaClientesComponent implements OnInit, OnDestroy {
       relativeTo: this.route,
       queryParams: { id: cliente.id },
     });
+  }
+
+  criarCliente() {
+    this.router.navigate(['criar'], { relativeTo: this.route });
   }
 
   private configurarProgressBar() {

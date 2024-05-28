@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap';
 import { ClientesService } from '../clientes.service';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import {
@@ -14,22 +13,25 @@ import { FormularioEditarCliente } from './formulario-editar-cliente';
 import moment from 'moment';
 import { NgxMaskDirective } from 'ngx-mask';
 import { Cliente } from '../cliente';
+import { FormularioClienteComponent } from '../../../shared/templates/formulario-cliente/formulario-cliente.component';
 
 @Component({
   selector: 'app-editar-cliente',
   standalone: true,
   imports: [
     CommonModule,
-    NgbDatepickerModule,
     RouterModule,
     FormsModule,
     ReactiveFormsModule,
     NgxMaskDirective,
+    FormularioClienteComponent,
   ],
   templateUrl: './editar-cliente.component.html',
   styleUrl: './editar-cliente.component.css',
 })
 export class EditarClienteComponent {
+  public titulo = 'Editar cliente';
+
   public form?: FormGroup<FormularioEditarCliente>;
   public cliente?: Cliente;
   public telefoneControls: FormControl<string | null>[] = [];
