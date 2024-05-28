@@ -8,10 +8,11 @@ import {
   DocumentoCliente,
   TelefoneCliente,
 } from './cliente';
+import { environment } from '../../../environments/environment.development';
 
 @Injectable()
 export class ClientesService {
-  private readonly _baseUrl = 'http://localhost:5259/api';
+  private readonly _baseUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) {}
 

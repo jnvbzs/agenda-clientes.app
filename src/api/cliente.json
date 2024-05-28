@@ -1,5 +1,5 @@
 {
-  "clientes": [
+  "cliente": [
     {
       "nome": "João Silva",
       "dataNascimento": "1986-02-09T03:00:00.000Z",
